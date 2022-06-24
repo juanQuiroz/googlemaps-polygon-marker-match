@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
-import MapLayout from './map-layout'
-import GMap from './gmap'
+import MapLayout from '../layout/googleMapLayout'
+import GoogleMapBox from './googleMapBox'
 import SearchBox from './searchBox';
-import Price from './price'
+import DeliveryPrice from './deliveryPrice';
 
 function Mapper() {
-  const [marker, setMarker] = useState(null);
+
 
   return(
     <>
       <MapLayout>
-        <SearchBox setMarker={setMarker}></SearchBox>
-        <GMap marker={marker}></GMap>
-        <Price marker={marker}/>
+        <SearchBox />
+        <GoogleMapBox />
+        <DeliveryPrice />
       </MapLayout>
-
     </>
   )
 }

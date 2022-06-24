@@ -1,4 +1,4 @@
-import PolygonsData from './data.json';
+import PolygonsData from '../../api/data.json';
 
 class Zone {
   constructor(poligono){
@@ -65,10 +65,6 @@ class DeliveryZones{
     return this.zoneList;
   }
 
-  calculatePrice(){
-
-  }
-
   getPricePerDeliveryZone(point){
     this.zoneList.map((zone) => {
       if(zone.isPointIntoPolygon(point)){
@@ -80,37 +76,5 @@ class DeliveryZones{
 }
 
 const deliveryZones = new DeliveryZones();
+
 export default deliveryZones;
-
-
-/*function DeliZones (){
-
-  const google = window.google;
-
-  const triangleCoords = [
-    { lat: 25.774, lng: -80.19 },
-    { lat: 18.466, lng: -66.118 },
-    { lat: 32.321, lng: -64.757 },
-  ];
-
-  const bermudaTriangle = new google.maps.Polygon({ paths: triangleCoords });
-
-  const resultColor = google.maps.geometry.poly.containsLocation(
-    { lat: 39.000, lng: -80.19 },
-    bermudaTriangle
-  )
-
-  alert("hola mundo")
-
-  if(resultColor){
-    alert("si se cuentra");
-  } else{
-    alert("noooooo");
-  }
-
-  return (
-    <p>Hi</p>
-  )
-
-}
-*/
