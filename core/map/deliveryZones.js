@@ -1,4 +1,4 @@
-import PolygonsData from '../../api/data.json';
+import sucursalesData from "../../api/sucursales";
 
 class Zone {
   constructor(poligono){
@@ -49,8 +49,14 @@ class Zone {
 
 class DeliveryZones{
   constructor(){
-    this.delivery_zones = PolygonsData['zone_deliveries'];
+    //this.delivery_zones = PolygonsData['zone_deliveries'];
+    //this.delivery_zones = DeliveriesData['zone_deliveries'];
+    this.delivery_zones = [];
     this.zoneList = [];
+  }
+
+  setSucursal(sucursal){
+    this.delivery_zones = sucursalesData[sucursal].data['zone_deliveries'];
     this.build();
   }
 

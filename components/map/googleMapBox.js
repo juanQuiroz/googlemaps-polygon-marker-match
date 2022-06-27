@@ -33,6 +33,13 @@ function GoogleMapBox() {
           draggable={true}
           onDragEnd={(e) => dispatch(updateUserMarker(e.latLng))}
         />
+
+        <Marker
+          position={{ lat:-13.07823, lng:-76.38772 }}
+          icon={{
+            url: "/images/oishi_marker.png",
+          }}
+        />
       </GoogleMap>
     )
   }
