@@ -1,5 +1,5 @@
 const LIBRARIES = ["places", "geometry"];
-const SHOWPOLYGONS = false;
+const SHOWPOLYGONS = true;
 const RESTRICTIONS = {
   country: 'PE',
   //postalCode: '15701'
