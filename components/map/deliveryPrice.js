@@ -11,6 +11,7 @@ function DeliveryPrice(){
 
   useEffect(()=>{
     const currentPrice = calculatePrice(zones, delivery.userMarker);
+
     dispatch(updateDeliveryPrice(currentPrice));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [delivery.userMarker])

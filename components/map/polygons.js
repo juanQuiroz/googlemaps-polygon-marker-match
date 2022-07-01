@@ -1,23 +1,40 @@
+import { useState, useContext, useEffect } from 'react';
 import { Polygon } from '@react-google-maps/api'
 import deliveryZones from '../../core/map/deliveryZones'
 import { SHOWPOLYGONS } from '../../utils/utils'
 
-function Polygons() {
-  const showpolygons = SHOWPOLYGONS;
-  const listZones = deliveryZones.getList();
 
-  const onLoad = polygon => console.log("polygon ready")
+import DeliveryContext from '../../store/deliveryContext';
+
+
+function Polygons() {
+  const google = window.google;
+
+  const showpolygons = SHOWPOLYGONS;
+  const [polygonList, setPolygonList] = useState(deliveryZones.getList());
+
+  const [delivery, dispatch] = useContext(DeliveryContext)
+
+
+  useEffect(() => {
+    //google.setMap(null);
+    deliveryZones.setSucursal(delivery.sucursalId);
+    setPolygonList(deliveryZones.getList())
+  },[delivery.sucursalId])
+
+
+  const onLoad = () => console.log("Polygon ready")
 
   return (
     <>
-    {listZones.map((zone) => {
+    {polygonList.map((polygon) => {
       return(
         // eslint-disable-next-line react/jsx-key
         <Polygon
-          key={zone.getZone()}
+          key={polygon.getZone()}
           onLoad={onLoad}
-          paths={zone.getPath()}
-          options={zone.getOptions()}
+          paths={polygon.getPath()}
+          options={polygon.getOptions()}
           visible={showpolygons}
         />
       )

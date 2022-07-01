@@ -1,9 +1,10 @@
-import React, { useState, memo, useContext } from 'react';
+import React, { memo, useContext, useEffect } from 'react';
 import { GoogleMap, Marker , useJsApiLoader} from '@react-google-maps/api';
 import MapStyle from '../../styles/map.module.css'
 import Polygons from './polygons';
 import DeliveryContext from '../../store/deliveryContext';
 import { updateUserMarker } from '../../store/deliveryActions'
+
 
 function GoogleMapBox() {
   //const [mapRef, setMapRef] = useState(null);
@@ -36,6 +37,7 @@ function GoogleMapBox() {
 
         <Marker
           position={{ lat:-13.07823, lng:-76.38772 }}
+          draggable={false}
           icon={{
             url: "/images/oishi_marker.png",
           }}

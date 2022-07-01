@@ -56,11 +56,12 @@ class DeliveryZones{
   }
 
   setSucursal(sucursal){
-    this.delivery_zones = sucursalesData[sucursal].data['zone_deliveries'];
+    this.delivery_zones = sucursalesData[sucursal - 1].polygons;
     this.build();
   }
 
   build(){
+    this.zoneList = []
     this.delivery_zones.map((zone_delivery) => {
       const zone = new Zone(zone_delivery)
       this.zoneList.push(zone)
