@@ -27,11 +27,12 @@ function Polygons() {
 
   return (
     <>
-    {polygonList.map((polygon) => {
+    {polygonList.map((polygon, index) => {
       return(
         // eslint-disable-next-line react/jsx-key
         <Polygon
-          key={polygon.getZone()}
+          //key={polygon.getZone()}
+          key={index}
           onLoad={onLoad}
           paths={polygon.getPath()}
           options={polygon.getOptions()}

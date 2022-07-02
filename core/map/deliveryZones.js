@@ -56,6 +56,7 @@ class DeliveryZones{
   }
 
   setSucursal(sucursal){
+    this.delivery_zones = [];
     this.delivery_zones = sucursalesData[sucursal - 1].polygons;
     this.build();
   }
