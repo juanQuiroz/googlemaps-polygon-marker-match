@@ -42,6 +42,21 @@ function GoogleMapBox() {
             url: "/images/oishi_marker.png",
           }}
         />
+        <Marker
+          position={{"lat": -13.4176305, "lng": -76.1319676 }}
+          draggable={false}
+          icon={{
+            url: "/images/oishi_marker.png",
+          }}
+        />
+        <Marker
+          position={{"lat": -14.0738371, "lng": -75.7276072 }}
+          draggable={false}
+          icon={{
+            url: "/images/oishi_marker.png",
+          }}
+        />
+
       </GoogleMap>
     )
   }
