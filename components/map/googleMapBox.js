@@ -11,7 +11,7 @@ function GoogleMapBox() {
   const [delivery, dispatch] = useContext(DeliveryContext)
 
   const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyB2ybAvqgwxGxMRam0arL-W6Ea4g_IYF2I" // ,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY // ,
     // ...otherOptions
   })
 
