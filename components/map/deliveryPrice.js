@@ -3,6 +3,15 @@ import deliveryZones from '../../core/map/deliveryZones';
 import DeliveryContext from '../../store/deliveryContext';
 import { updateDeliveryPrice } from '../../store/deliveryActions';
 
+
+function ClientLocation(location){
+  return(
+    <>
+      <h1>hola mundo</h1>
+    </>
+  )
+}
+
 function DeliveryPrice(){
   const [delivery, dispatch] = useContext(DeliveryContext);
   const zones = deliveryZones.getList();
@@ -16,11 +25,20 @@ function DeliveryPrice(){
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [delivery.userMarker])
 
+
   return(
     <>
       <p>
         {
          delivery.price !== null ? "Price:"+(delivery.price) : "Lo sentimos, no hay delivery para esta zona."
+        }
+      </p>
+      <p>
+        {
+         delivery.userMarker.lat !== -13.07823  ? "Location: " + JSON.stringify(delivery.userMarker)
+                                                                                  .replace("{\"lat\":", "")
+                                                                                  .replace("\"lng\":", "")
+                                                                                  .replace("}", "") : ""
         }
       </p>
     </>
@@ -50,6 +68,8 @@ function calculatePrice(zones, marke){
 
   return null;
 }
+
+
 
 
 export default DeliveryPrice;

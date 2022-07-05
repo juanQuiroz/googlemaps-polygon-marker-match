@@ -4,6 +4,7 @@ export default {
   listZones: {},
   price: 0,
   zone: 0,
+  currentMarker: {},
   userMarker:{
     lat:-13.07823,
     lng:-76.38772
