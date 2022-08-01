@@ -25,7 +25,8 @@ function GoogleMapBox() {
         clickableIcons={false}
         onClick={(e) => dispatch(updateUserMarker(e.latLng))}
         options={{
-          "gestureHandling": "cooperative"
+          "gestureHandling": "cooperative",
+          streetViewControl: false
         }}
       >
         <Polygons />
