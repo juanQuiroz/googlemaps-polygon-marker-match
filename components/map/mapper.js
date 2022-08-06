@@ -1,7 +1,8 @@
-import MapLayout from '../layout/googleMapLayout'
-import GoogleMapBox from './googleMapBox'
+import MapLayout from '../layout/googleMapLayout';
+import GoogleMapBox from './googleMapBox';
 import SearchBox from './searchBox';
 import DeliveryPrice from './deliveryPrice';
+import ClientAddress from './clientAddress';
 
 function Mapper() {
 
@@ -11,6 +12,7 @@ function Mapper() {
         <SearchBox />
         <GoogleMapBox />
         <DeliveryPrice />
+        <ClientAddress />
       </MapLayout>
     </>
   )
