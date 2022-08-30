@@ -24,7 +24,8 @@ function DetectUserLocation(){
   }
 
   function error(error) {
-    alert(`ERROR(${error.code}): ${error.message}`);
+    //alert(`ERROR(${error.code}): ${error.message}`);
+    alert("Necesita activar la geolocalización.")
   };
 
   function updateUserLocation(marker){
